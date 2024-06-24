@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "日程管理系统 (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "日程管理系统 (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
