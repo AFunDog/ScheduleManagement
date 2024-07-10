@@ -1,0 +1,42 @@
+{
+  "AppTitleUid": "日程管理系统",
+  "AppSubTitleUid": "测试版",
+
+
+
+  "MainPageTitleUid": "主页",
+  "MainPageHeaderUid": "控制面板",
+
+  "AllSchedulePageTitleUid": "所有",
+  "AllSchedulePageHeaderUid": "所有日程",
+
+  "SettingPageTitleUid": "设置",
+  "SettingPageHeaderUid": "设置",
+  "SettingPage.AffirmButtonTextUid": "确认",
+  "SettingPage.CancelButtonTextUid": "取消",
+
+  "AppInfoPageTitleUid": "应用信息",
+  "AppInfoPageHeaderUid": "应用信息",
+
+  "AppInfoHeaderUid":"应用信息",
+  "AppVersionHeaderUid" : "版本号",
+
+  "Setting.ThemeUid": "主题",
+  "Setting.ThemeDescUid": "调整应用的整体色彩",
+  "Setting.Theme.DefaultUid": "系统默认",
+  "Setting.Theme.LightUid": "亮色",
+  "Setting.Theme.DarkUid": "暗色",
+
+  "Setting.WindowSizeUid": "窗口尺寸",
+  "Setting.WindowSizeDescUid": "调整应用的窗口大小",
+  "Setting.WindowSize.SmallUid": "小尺寸",
+  "Setting.WindowSize.MediumUid": "常规尺寸",
+  "Setting.WindowSize.LargeUid": "大尺寸",
+
+  "Setting.LanguageUid": "语言",
+  "Setting.LanguageDescUid": "调整应用的显示语言",
+  "Setting.Language.SystemUid": "系统默认",
+  "Setting.Language.zh-cnUid": "简体中文",
+  "Setting.Language.en-usUid": "English"
+
+}
