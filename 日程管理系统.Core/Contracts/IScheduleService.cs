@@ -5,17 +5,16 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using 日程管理系统.Structs;
-using 日程管理系统.ViewDatas;
+using 日程管理系统.Core.Structs;
 
-namespace 日程管理系统.Contracts
+namespace 日程管理系统.Core.Contracts
 {
     public interface IScheduleService
     {
-        public ObservableCollection<ScheduleViewData> Schedules { get; }
+        public ObservableCollection<ScheduleData> Schedules { get; }
 
-        void AddSchedule(ScheduleViewData schedule);
-        void RemoveSchedule(ScheduleViewData schedule);
+        void AddSchedule(ScheduleData schedule);
+        void RemoveSchedule(ScheduleData schedule);
         void ReadSchedules(string path);
         void SaveSchedules(string path);
     }

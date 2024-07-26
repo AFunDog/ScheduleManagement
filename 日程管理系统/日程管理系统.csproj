@@ -17,7 +17,9 @@
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 	<ItemGroup>
-	  <None Remove="Themes\Generic.xaml" />
+	  <None Remove="Controls\ScheduleCard.xaml" />
+	  <None Remove="Controls\SchedulePanel.xaml" />
+	  <None Remove="Controls\TimePickerButton.xaml" />
 	  <None Remove="Views\AllSchedulePage.xaml" />
 	  <None Remove="Views\AppInfoPage.xaml" />
 	  <None Remove="Views\MainPage.xaml" />
@@ -57,8 +59,18 @@
 		<Folder Include="Assets\" />
 		<Folder Include="Behaviors\" />
 		<Folder Include="Converters\" />
+		<Folder Include="Themes\" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Page Update="Controls\ScheduleCard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Update="Controls\SchedulePanel.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Update="Controls\TimePickerButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
 	  <None Update="Localizations\zh-cn.json">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
@@ -97,10 +109,8 @@
 		<HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
 	</PropertyGroup>
 	<ItemGroup>
-	  <Resource Remove="Themes\Generic.xaml" />
-	</ItemGroup>
-	<ItemGroup>
 	  <ProjectReference Include="..\..\CoreServices\CoreServices.WinUI\CoreServices.WinUI.csproj" />
+	  <ProjectReference Include="..\日程管理系统.Core\日程管理系统.Core.csproj" />
 	</ItemGroup>
 	<!-- 删除多余的语言文件夹 -->
 	<Target Name="RemoveFoldersWithMuiFiles" AfterTargets="Build">

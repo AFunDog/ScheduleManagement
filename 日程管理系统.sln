@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "日程管理系统", "日�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreServices.WinUI", "..\CoreServices\CoreServices.WinUI\CoreServices.WinUI.csproj", "{F5E4AECE-B1C2-4DF6-83F6-69CBCAFC5CE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "日程管理系统.Core", "日程管理系统.Core\日程管理系统.Core.csproj", "{5D69AF99-F08D-49EA-8662-B30664C9919B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,22 @@ Global
 		{F5E4AECE-B1C2-4DF6-83F6-69CBCAFC5CE3}.Release|x64.Build.0 = Release|Any CPU
 		{F5E4AECE-B1C2-4DF6-83F6-69CBCAFC5CE3}.Release|x86.ActiveCfg = Release|Any CPU
 		{F5E4AECE-B1C2-4DF6-83F6-69CBCAFC5CE3}.Release|x86.Build.0 = Release|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Debug|x64.Build.0 = Debug|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Debug|x86.Build.0 = Debug|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Release|ARM64.Build.0 = Release|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Release|x64.ActiveCfg = Release|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Release|x64.Build.0 = Release|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Release|x86.ActiveCfg = Release|Any CPU
+		{5D69AF99-F08D-49EA-8662-B30664C9919B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

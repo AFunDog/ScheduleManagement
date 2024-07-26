@@ -10,9 +10,9 @@ using CoreServices.Localization;
 using CoreServices.Setting;
 using CoreServices.Setting.Structs;
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Media.Animation;
 using Windows.Graphics;
 using 日程管理系统.Contracts;
+using 日程管理系统.Core.Contracts;
 using 日程管理系统.Helpers;
 using 日程管理系统.SettingValueCommands;
 using 日程管理系统.Views;
@@ -25,11 +25,7 @@ namespace 日程管理系统.Services
         private readonly ISettingService _settingService;
         private readonly IScheduleService _scheduleService;
 
-        public ActivationService(
-            ILocalizeService localizeService,
-            ISettingService settingService,
-            IScheduleService scheduleService
-        )
+        public ActivationService(ILocalizeService localizeService, ISettingService settingService, IScheduleService scheduleService)
         {
             _localizeService = localizeService;
             _settingService = settingService;

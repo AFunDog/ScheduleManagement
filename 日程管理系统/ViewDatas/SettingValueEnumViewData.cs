@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CoreServices.Localization;
 using CoreServices.Setting.Structs;
+using 日程管理系统.Core.Structs;
 using 日程管理系统.Extensions;
-using 日程管理系统.Structs;
 
 namespace 日程管理系统.ViewDatas
 {
@@ -25,7 +25,7 @@ namespace 日程管理系统.ViewDatas
 
         public object IndexToValue(int index)
         {
-            if(index != -1)
+            if (index != -1)
             {
                 Value = index;
             }

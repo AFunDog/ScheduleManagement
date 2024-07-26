@@ -10,8 +10,8 @@ using CoreServices.WinUI.Structs;
 using Mapster;
 using Microsoft.UI.Xaml.Media.Animation;
 using 日程管理系统.Contracts;
+using 日程管理系统.Core.Structs;
 using 日程管理系统.Extensions;
-using 日程管理系统.Structs;
 using 日程管理系统.Views;
 
 namespace 日程管理系统.ViewModels

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" ?>
+<UserControl
+    x:Class="日程管理系统.Controls.SchedulePanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:日程管理系统.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel
+        Padding="8"
+        Background="{ThemeResource LayerOnAccentAcrylicFillColorDefaultBrush}"
+        Spacing="8">
+        <Button HorizontalAlignment="Right" Click="CloseButton_Click">
+            <SymbolIcon Symbol="Cancel" />
+        </Button>
+        <Grid Margin="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <FontIcon
+                Grid.Column="0"
+                Margin="0,0,8,0"
+                FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                FontWeight="Bold"
+                Foreground="{x:Bind TextBlockForeground}"
+                Glyph="{x:Bind IconGlyph, Mode=OneWay}" />
+            <TextBlock
+                Grid.Column="1"
+                Padding="0,2,0,2"
+                Foreground="{x:Bind TextBlockForeground, Mode=OneWay}"
+                Style="{ThemeResource SubtitleTextBlockStyle}"
+                Text="{x:Bind SelectedSchedule.ScheduleTitle, Mode=OneWay}"
+                TextDecorations="{x:Bind TitleTextBlockTextDecoration, Mode=OneWay}"
+                TextLineBounds="Tight" />
+            <FontIcon
+                Grid.Column="2"
+                FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                Glyph="&#xE734;" />
+        </Grid>
+        <local:TimePickerButton
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Stretch"
+            PlaceholderText="添加开始时间"
+            Time="{x:Bind SelectedSchedule.StartTime, Mode=TwoWay}" />
+        <local:TimePickerButton
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Stretch"
+            PlaceholderText="添加截止时间"
+            Time="{x:Bind SelectedSchedule.EndTime, Mode=TwoWay}" />
+        <TextBox
+            MinHeight="56"
+            AcceptsReturn="True"
+            PlaceholderText="添加备注"
+            Text="{x:Bind SelectedSchedule.ScheduleDesc, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+    </StackPanel>
+</UserControl>

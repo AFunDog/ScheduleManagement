@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" ?>
+<Button
+    x:Class="日程管理系统.Controls.TimePickerButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:日程管理系统.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    PointerPressed="TimePickerButton_PointerPressed"
+    Style="{ThemeResource DefaultButtonStyle}"
+    mc:Ignorable="d">
+    <Button.Flyout>
+        <Flyout>
+            <StackPanel Orientation="Vertical" Spacing="8">
+                <TextBlock Text="请选择日期" />
+                <CalendarView
+                    x:Name="Flyout_CalendarView"
+                    SelectedDatesChanged="CalendarView_SelectedDatesChanged"
+                    SelectionMode="Single" />
+                <TextBlock Text="请选择时间" />
+                <TimePicker x:Name="Flyout_TimePicker" SelectedTimeChanged="TimePicker_SelectedTimeChanged" />
+            </StackPanel>
+        </Flyout>
+    </Button.Flyout>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <FontIcon
+            Grid.Column="0"
+            Margin="0,0,8,0"
+            Glyph="&#xE916;" />
+        <TextBlock Grid.Column="1" Text="{x:Bind ShowText, Mode=OneWay}" />
+    </Grid>
+</Button>

@@ -1,22 +1,22 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CoreServices.Localization;
-using CoreServices.Setting.Structs;
-using Mapster;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CoreServices.Localization;
+using CoreServices.Setting.Structs;
+using Mapster;
+using 日程管理系统.Core.Structs;
 using 日程管理系统.Extensions;
-using 日程管理系统.Structs;
 
 namespace 日程管理系统.ViewDatas
 {
     public partial class SettingInfoViewData : ObservableObject
     {
-        private readonly SettingInfo _settingInfo;
+        private readonly Core.Structs.SettingInfo _settingInfo;
 
-        public SettingInfoViewData(SettingInfo settingInfo)
+        public SettingInfoViewData(Core.Structs.SettingInfo settingInfo)
         {
             _settingInfo = settingInfo;
             SettingName = $"Setting.{settingInfo.SettingKey}Uid".Localize();
@@ -34,13 +34,14 @@ namespace 日程管理系统.ViewDatas
 
         [ObservableProperty]
         private string _settingName;
+
         [ObservableProperty]
         private string _settingDesc;
+
         [ObservableProperty]
         private string _iconGlyph;
+
         [ObservableProperty]
         private SettingValueViewData _settingValue;
-
-        
     }
 }

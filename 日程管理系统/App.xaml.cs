@@ -1,13 +1,16 @@
-﻿using CoreServices.Localization;
+﻿using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using CommunityToolkit.Mvvm.Messaging;
+using CoreServices.Localization;
 using CoreServices.Setting;
 using CoreServices.WinUI.Contracts;
 using CoreServices.WinUI.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
-using System;
-using System.Runtime.CompilerServices;
 using 日程管理系统.Contracts;
+using 日程管理系统.Core.Contracts;
 using 日程管理系统.Services;
 using 日程管理系统.ViewModels;
 
@@ -22,8 +25,8 @@ namespace 日程管理系统
     public partial class App : Application
     {
         public static App Instance => (Current as App)!;
-
-        public const string Version = "1.0.0"; 
+        public static IMessenger Messenger => WeakReferenceMessenger.Default;
+        public const string Version = "1.0.0";
 
         public static T GetService<T>()
         {
@@ -42,14 +45,13 @@ namespace 日程管理系统
         {
             this.InitializeComponent();
 
-
             var builder = new ServiceCollection()
-                .AddSingleton<ILocalizeService,LocalizeService>()
-                .AddSingleton<ISettingService,SettingService>()
-                .AddSingleton<IScheduleService,ScheduleService>()
-                .AddSingleton<INavigateService,NavigateService>()
+                .AddSingleton<ILocalizeService, LocalizeService>()
+                .AddSingleton<ISettingService, SettingService>()
+                .AddSingleton<IScheduleService, ScheduleService>()
+                .AddSingleton<INavigateService, NavigateService>()
                 .AddTransient<IActivationService, ActivationService>()
-                .AddSingleton<IWindowSizeService,WindowSizeService>()
+                .AddSingleton<IWindowSizeService, WindowSizeService>()
                 .AddTransient<MainViewModel>()
                 .AddTransient<AllScheduleViewModel>()
                 .AddTransient<SettingViewModel>()
@@ -61,10 +63,7 @@ namespace 日程管理系统
             GetService<IActivationService>().AppActivateAsync(null).Wait();
         }
 
-        public IServiceProvider ServiceProvider
-        {
-            get; private set;
-        }
+        public IServiceProvider ServiceProvider { get; private set; }
 
         /// <summary>
         /// Invoked when the application is launched.
@@ -73,7 +72,6 @@ namespace 日程管理系统
         protected override async void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             await GetService<IActivationService>().LaunchedActivateAsync(args);
-            
         }
     }
 }

@@ -8,7 +8,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:s="using:日程管理系统.Structs"
     xmlns:ss="using:CoreServices.WinUI.Structs"
     xmlns:sys="using:System"
     xmlns:uc="using:日程管理系统.Controls"
@@ -37,6 +36,7 @@
             x:Name="NavigationViewControl"
             Grid.Row="1"
             FooterPageItems="{x:Bind ViewModel.FooterPageItems}"
-            HeaderPageItems="{x:Bind ViewModel.HeaderPageItems}" />
+            HeaderPageItems="{x:Bind ViewModel.HeaderPageItems}"
+            OpenPaneLength="192" />
     </Grid>
 </windowex:WindowEx>

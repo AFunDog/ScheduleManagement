@@ -9,9 +9,8 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Mapster;
 using MessagePack;
-using 日程管理系统.Contracts;
-using 日程管理系统.Structs;
-using 日程管理系统.ViewDatas;
+using 日程管理系统.Core.Contracts;
+using 日程管理系统.Core.Structs;
 
 namespace 日程管理系统.Services
 {
@@ -20,15 +19,15 @@ namespace 日程管理系统.Services
         public const string ScedulesFolder = "Schedules";
         public const string SchedulesFileExtension = ".sch";
 
-        private readonly ObservableCollection<ScheduleViewData> _schedules = [];
-        public ObservableCollection<ScheduleViewData> Schedules => _schedules;
+        private readonly ObservableCollection<ScheduleData> _schedules = [];
+        public ObservableCollection<ScheduleData> Schedules => _schedules;
 
-        public void AddSchedule(ScheduleViewData schedule)
+        public void AddSchedule(ScheduleData schedule)
         {
             _schedules.Add(schedule);
         }
 
-        public void RemoveSchedule(ScheduleViewData schedule)
+        public void RemoveSchedule(ScheduleData schedule)
         {
             _schedules.Remove(schedule);
         }
@@ -42,12 +41,10 @@ namespace 日程管理系统.Services
             }
             foreach (var file in Directory.GetFiles(path, $"*{SchedulesFileExtension}"))
             {
-                var ss = MessagePackSerializer.Deserialize<IEnumerable<ScheduleInfo>>(File.ReadAllBytes(file));
+                var ss = MessagePackSerializer.Deserialize<IEnumerable<ScheduleData>>(File.ReadAllBytes(file));
                 foreach (var s in ss)
                 {
-                    ScheduleViewData scheduleViewData = new();
-                    s.Adapt(scheduleViewData);
-                    _schedules.Add(scheduleViewData);
+                    _schedules.Add(s);
                 }
             }
         }
@@ -56,13 +53,7 @@ namespace 日程管理系统.Services
         {
             if (!File.Exists(path))
                 File.Create(path).Close();
-            var ss = _schedules.Select(svd =>
-            {
-                ScheduleInfo si = new();
-                svd.Adapt(si);
-                return si;
-            });
-            File.WriteAllBytes(path, MessagePackSerializer.Serialize(ss));
+            File.WriteAllBytes(path, MessagePackSerializer.Serialize(_schedules));
         }
     }
 }

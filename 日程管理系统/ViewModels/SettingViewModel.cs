@@ -11,9 +11,9 @@ using CommunityToolkit.Mvvm.Input;
 using CoreServices.Localization;
 using CoreServices.Setting;
 using CoreServices.Setting.Structs;
+using 日程管理系统.Core.Structs;
 using 日程管理系统.Extensions;
 using 日程管理系统.Helpers;
-using 日程管理系统.Structs;
 using 日程管理系统.ViewDatas;
 
 namespace 日程管理系统.ViewModels
@@ -32,7 +32,7 @@ namespace 日程管理系统.ViewModels
         [ObservableProperty]
         private ObservableCollection<SettingInfoViewData> _settingInfos = [];
 
-        public SettingViewModel( ISettingService settingService)
+        public SettingViewModel(ISettingService settingService)
         {
             InitSettingInfos(settingService);
             Messenger.Register<SettingViewModel, object, string>(this, SettingChanged, OnSettingChanged);
@@ -42,9 +42,9 @@ namespace 日程管理系统.ViewModels
         {
             (string SettingKey, string IconGlyph, bool NeedReStart)[] ShowSettings =
             [
-                new(SettingKeyLibrary.Theme, "\uE790",true),
-                new(SettingKeyLibrary.WindowSize, "\uE744",false),
-                new(SettingKeyLibrary.Language, "\uF2B7",true),
+                new(SettingKeyLibrary.Theme, "\uE790", true),
+                new(SettingKeyLibrary.WindowSize, "\uE744", false),
+                new(SettingKeyLibrary.Language, "\uF2B7", true),
             ];
             //List<SettingInfoViewData> datas = [];
             foreach ((var key, var icon, var restart) in ShowSettings)
